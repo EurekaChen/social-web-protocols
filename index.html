@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+﻿<!DOCTYPE html>
+<html dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
 <head><meta lang="" property="dc:language" content="en">
     <title>Social Web Protocols</title>
     <meta charset="utf-8">
@@ -237,233 +237,300 @@ table.th90 th, table.th90 td {
     </script>
 </head>
 <body>
+   <button onclick="showLang('en')">English</button><button onclick="showLang('zh')">中文</button>
   <section id="abstract">
     The Social Web Protocols are a collection of standards which enable various aspects of decentralised social interaction on the Web. This document describes the purposes of each, and how they fit together.
   </section>
   <section id="sotd"></section>
 
   <section id="introduction">
-    <h2>Introduction</h2>
-    <p>The W3C Social Web Working Group ran from June 2014 to December 2017, published seven recommendations and some notes. This is one of the notes, and it describes the work at the time of the group closing.</p>
-    <p>This work is by no means done, and the various communities involved have by no means gone to sleep. The endeavour continues in the <a href="https://www.w3.org/wiki/SocialCG">Social Web Community Group</a>, in which you are warmly invited to particiate.</p>
+    <h2><span lang="en">Introduction</span><span lang="zh">介绍</span></h2>
+    <p lang="en">The W3C Social Web Working Group ran from June 2014 to December 2017, published seven recommendations and some notes. This is one of the notes, and it describes the work at the time of the group closing.</p>
+	<p lang="zh">W3C社交网络工作组于2014年6月至2017年12月间发布了七项建议规范和一些注记。 这是注记之一，它描述了小组关闭时的一些工作。
+	</p>
+    <p lang="en">This work is by no means done, and the various communities involved have by no means gone to sleep. The endeavour continues in the <a href="https://www.w3.org/wiki/SocialCG">Social Web Community Group</a>, in which you are warmly invited to particiate.</p>
+	<p lang="zh">这项工作没有完成，所涉及的各个社区绝不会就此停止。  <a href="https://www.w3.org/wiki/SocialCG">社交网络社区小组</a>会继续努力，并热忱邀请您的参与。</p>
   </section>
 
   <section id="overview">
-    <h2>Overview</h2>
+      <h2><span lang="en">Overview</span><span lang="zh">概述</span></h2>
 
-    <p>People and the content they create are the core components of the social web; they make up the social graph. This document describes a standard way in which people can:</p>
-    
-    <ul>
-      <li>create, update and delete social content;</li>
-      <li>connect with other people by subscribing to their content;</li>
-      <li>interact with other peoples' content;</li>
-      <li>be notified when other people interact with their content.</li>
-    </ul>
-    
-    <p>regardless of <em>what that content</em> is or <em>where it is stored</em>.</p>
-    
-    <p>These components are core building blocks for interoperable decentralised social systems.</p>
-    
-    <p>Each of these components can be implemented independently as needed, or all together in one system, as well as extended to meet domain-specific requirements. Users can store their social data across any number of compliant servers, and use compliant clients hosted elsewhere to interact with their own content and the content of others.</p>
+      <p lang="en">People and the content they create are the core components of the social web; they make up the social graph. This document describes a standard way in which people can:</p>
+      <p lang="zh">人们和他们创造的内容是社交网络的核心组成部分; 他们构成了社交图表。 本文档描述了人们可以用一种标准的方式进行：</p>
+      <ul>
+          <li><span lang="en">create, update and delete social content;</span><span lang="zh">创建，更新和删除社交内容</span></li>
+          <li><span lang="en">connect with other people by subscribing to their content;</span><span lang="zh">通过订阅其他人的内容与其建立联系；</span></li>
+          <li><span lang="en">interact with other peoples' content;</span><span lang="zh">与其他人的内容互动</span></li>
+          <li><span lang="en">be notified when other people interact with their content.</span><span lang="zh">在与其它人的内容进行互动时得到通知</span></li>
+      </ul>
 
-    <p>The <a href="https://www.w3.org/2013/socialweb/social-wg-charter">Social Web Working Group Charter</a> proposes the following deliverables, which have been met by the Group, and will be referred to throughout this document:</p>
+      <p lang="en">regardless of <em>what that content</em> is or <em>where it is stored</em>.</p>
+      <p lang="zh">不管是<em>什么内容</em> 或者 <em>存储在哪里</em>。</p>
 
-    <dl>
-      <dt>Social Data Syntax</dt>
-      <dd>A JSON-based syntax to allow the transfer of social information, such as status updates, across differing social systems.</dd>
+      <p lang="en">These components are core building blocks for interoperable decentralised social systems.</p>
+      <p lang="zh">这些是组件是可互操作的去中心化社交系统的核心构件。</p>
 
-      <dt>Social API</dt>
-      <dd>A document that defines a specification for a client-side API that lets developers embed and format third party information such as social status updates.</dd>
+      <p lang="en">Each of these components can be implemented independently as needed, or all together in one system, as well as extended to meet domain-specific requirements. Users can store their social data across any number of compliant servers, and use compliant clients hosted elsewhere to interact with their own content and the content of others.</p>
+      <p lang="zh">这些组件中的每一个都可以根据需要独立实现，或者全部集中在一个系统中，并且可以扩展以满足特定领域的需求。 用户可以将他们的社交数据存储在任意数量的兼容服务器上，并使用其他地方托管的兼容客户端与他们自己的内容和其他内容进行交互。</p>
 
-      <dt>Federation Protocol</dt>
-      <dd>A Web protocol to allow the federation of activity-based status updates and other data (such as profile information) between heterogeneous Web-based social systems. Federation should include multiple servers sharing updates within a client-server architecture, and allow decentralized social systems to be built.</dd>
-    </dl>
-
-    <section id="contents">
-      <h3>Contents</h3>
-    
-      <p>This is an overview of the specifications of the Social Web Working Group.</p>
-      
-      <p>Due to the diversity of viable technical approaches proposed within the Working Group, several specifications reached recommendation which provide overlapping functionality through differing mechanisms. This document exists to provide informative guidance on how and when to implement the various specifications, as well as some hints towards routes to bridging between similar specifications.</p>
-
-    </section>
-
-    <section id="definitions">
-      <h3>Definitions</h3>
-
-      <p>This document is divided into five sections, pertaining to the components above, and derived from the <a href="https://www.w3.org/wiki/Socialwg/Social_API/Requirements">Social API Requirements</a>. The various Social Web Working Group specifications implement different combinations of these requirements (see <a href="#requirements"></a>) so for clarity the requirement are defined here.</p>
+      <p lang="en">The <a href="https://www.w3.org/2013/socialweb/social-wg-charter">Social Web Working Group Charter</a> proposes the following deliverables, which have been met by the Group, and will be referred to throughout this document:</p>
+      <p lang="zh"> <a href="https://www.w3.org/2013/socialweb/social-wg-charter">社交网络工作组章程</a>提议以下可交付成果，本小组已经达成并涉及以下文档:</p>
 
       <dl>
-        <dt><a href="#reading">reading</a></dt>
-        <dd>covers specifications which describe the syntax and vocabulary to be used for social content. Useful for applications which expose feeds, as well as those which consume them.</dd>
-        <dt>publishing</dt>
-        <dd>covers Social API specifications which tell clients how to instruct servers to <a href="#publishing">create</a>, <a href="#updating">update</a> or <a href="#deleting">delete</a> content.</dd>
-        <dt><a href="#subscribing">subscribing</a></dt>
-        <dd>covers Federation Protocol specifications which describe how to ask for notifications about content, and subsequently how those notifications should be delivered.</dd>
-        <dt><a href="#delivery">delivery</a></dt>
-        <dd>covers Federation Protocol specifications which describe how to deliver notifications which have not been solicited through subscription.</dd>
-        <dt><a href="#profiles">profiles</a></dt>
-        <dd>covers specifications which describe profiles.</dd>
-      </dl>
-      
-    </section>
-    
-    <section id="swwg-specs">
-      <h3>Specifications</h3>
+          <dt><span lang="en">Social Data Syntax</span><span lang="zh">社交数据语法</span></dt>
+          <dd><span lang="en">A JSON-based syntax to allow the transfer of social information, such as status updates, across differing social systems.</span>
+              <span lang="zh">基于JSON的语法，允许在不同的社交系统中传输社交信息，例如状态更新。</span>
+          </dd>
+          
 
-      <p>These are the specifications produced by the Social Web Working Group. New implementation reports and feedback are always welcome (details for where to submit these are at the top of each document).</p>
+          <dt><span lang="en">Social API</span><span lang="zh">社交API</span></dt>
+          <dd><span lang="en"> A document that defines a specification for a client-side API that lets developers embed and format third party information such as social status updates.</span><span lang="zh">定义客户端API规范的文档，可让开发人员嵌入和格式化第三方信息，如社交状态更新</span></dd>
 
-      <dl>
-
-        <dt>[[Activitypub]]</dt>
-        <dd>JSON(-LD)-based APIs for client-to-server interactions (ie. publishing) and server-to-server interactions (ie. federation).</dd>
-
-        <dt>ActivityStreams 2.0 [[activitystreams-core]] and [[activitystreams-vocabulary]]</dt>
-        <dd>The syntax and vocabulary for <a href="#reading">representing</a> social activities, actors, objects, and collections in JSON(-LD).</dd>
-        
-        <dt>Linked Data Notifications ([[LDN]])</dt>
-        <dd>A JSON-LD-based protocol for <a href="#delivery">delivery</a>.</dd>
-
-        <dt>[[Micropub]]</dt>
-        <dd>A form-encoding and JSON-based API for client-to-server interactions (ie. publishing).</dd>
-
-        <dt>[[Webmention]]</dt>
-        <dd>A form-encoding-based protocol for <a href="#delivery">delivery</a>.</dd>
-        
-        <dt>[[WebSub]]</dt>
-        <dd>A protocol for <a href="#subscribing">subscription</a> to any resource and <a href="#delivery">delivery</a> of updates about it.</dd>
-
+          <dt><span lang="en">Federation Protocol</span><span lang="zh">联邦协议</span></dt>
+          <dd><span lang="en">A Web protocol to allow the federation of activity-based status updates and other data (such as profile information) between heterogeneous Web-based social systems. Federation should include multiple servers sharing updates within a client-server architecture, and allow decentralized social systems to be built.</span>
+              <span lang="zh">一种Web协议，允许基于活动的状态更新和异构的基于Web的社交系统之间的其他数据（如配置文件信息）联合。 联帮应包括多种在客户端 - 服务器架构内共享更新的服务器，并允许构建去中心化的社交系统。</span>
+          </dd>
       </dl>
 
-      <p>Specifications which are not Social Web Working Group recommendations, but which are nonetheless relevent to the charter deliverables, are described in <a href="#related-specs"></a>.</p>
+      <section id="contents">
+          <h3><span lang="en">Contents</span><span lang="zh">内容</span></h3>
 
-      <section id="requirements">
-        <h4>Requirements</h4>
-        <p>This table shows the high level requirements according to the <a href="https://www.w3.org/2013/socialweb/social-wg-charter.html">Social Web Working Group charter</a> and the <a href="https://www.w3.org/wiki/Socialwg/Social_API/Requirements">Social API Requirements</a>, and how the specifications of the Working Group overlap with respect to each.</p>
-        <p>This table lists the requirements met by the core functionality of each specification. Some specifications may additionally touch on or make suggestions about other requirements, which can be useful when deciding how to combine specifications, and is highlighted as appropriate throughout this document.</p>
-        <table class="th90">
-          <tr>
-            <td></td>
-            <td colspan="3">Data syntax</td>
-            <td colspan="4">Social API</td>
-            <td colspan="2">Federation Protocol</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <th><a href="#content-representation">Vocabulary</a></th>
-            <th><a href="#content-representation">Syntax</a></th>
-            <th><a href="#profiles">Profiles</a></th>
-            <th><a href="#reading">Read</a></th>
-            <th><a href="#publishing">Create</a></th>
-            <th><a href="#updating">Update</a></th>
-            <th><a href="#deleting">Delete</a></th>
-            <th><a href="#subscribing">Subscription</a></th>
-            <th><a href="#delivery">Delivery</a></th>
-          </tr>
-          <tr>
-            <td style="text-align:left;">ActivityPub</td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">ActivityStreams 2.0</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          
-          <tr>
-            <td style="text-align:left;">Linked Data Notifications</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;" style="text-align:left;">Micropub</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td></td>
-            <td></td>
-          </tr>
-          
-          <tr>
-            <td style="text-align:left;">Webmention</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">WebSub<br></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>X</td>
-            <td></td>
-          </tr>
+          <p lang="en">This is an overview of the specifications of the Social Web Working Group.</p>
+          <p lang="zh">这是社交网络工作组规范的概述。</p>
 
-        </table>
+          <p lang="en">Due to the diversity of viable technical approaches proposed within the Working Group, several specifications reached recommendation which provide overlapping functionality through differing mechanisms. This document exists to provide informative guidance on how and when to implement the various specifications, as well as some hints towards routes to bridging between similar specifications.</p>
+          <p lang="zh">
+              由于工作组内提出的可行技术方法的多样性，有几个规范达成了建议规范，通过不同的机制提供重叠的功能。 本文旨在就如何以及何时实施各种规范提供信息性指导，以及在类似规格之间桥接路由的一些提示。
+          </p>
       </section>
 
-      <section id="how-do-the-specs-relate-to-each-other">
-        <h4>How do these specifications relate to each other?</h4>
-        <p>As a quick reference, some key relationships between specifications are as follows:</p>
-        <ul>
-          <li><strong>ActivityPub and ActivityStreams 2.0</strong>: ActivityPub uses the AS2 syntax and vocabulary for the payload of all requests.</li>
-          <li><strong>ActivityPub and Linked Data Notifications</strong>: ActivityPub specialises LDN as the mechanism for delivery of notifications by requiring that payloads are AS2. <em>Inbox</em> endpoint discovery is the same. LDN receivers can understand requests from ActivityPub federated servers, but ActivityPub servers can't necessarily understand requests from generic LDN senders.</li>
-          <li><strong>ActivityStreams 2.0 and Linked Data Notifications</strong>: LDN MAY use the AS2 syntax and vocabulary for the payload of notification requests.</li>
-          <li><strong>Webmention and Linked Data Notifications</strong>: Overlapping functionality that needs to be bridged due to different content types of requests. An LDN request MAY contain the equivalent data as a Webmention request, but not necessarily vice versa.</li>
-          <li><strong>ActivityPub and Micropub</strong>: Overlapping functionality that needs to be bridged due to different vocabularies and possibly different content types of requests. Micropub specifies client-to-server interactions for content creation; ActivityPub specifies this, <em>plus</em> side-effects and server-to-server interactions.</li>
-          <li><strong>Micropub and Webmention</strong>: Are complementary but independent. Content can be created with Micropub, then Webmentions can be sent to any URLs referenced by the content.</li>
-          <li><strong>Micropub and Linked Data Notifications</strong>: Are complementary but independent. Content can be created with Micropub, then LDN discovery can be commenced on any relevant resources referenced by the content.</li>
-          <li><strong>Micropub and WebSub</strong>: Are complementary but independent. Content can be created with Micropub, then a WebSub <em>hub</em> can handle delivery to subscribers.</li>
-          <li><strong>ActivityPub and WebSub</strong>: Overlapping functionality using different content types and verification mechanisms.</li>
-        </ul>
+      <section id="definitions">
+          <h3><span lang="en">Definitions</span><span lang="zh">定义</span></h3>
+
+
+          <p lang="en">This document is divided into five sections, pertaining to the components above, and derived from the <a href="https://www.w3.org/wiki/Socialwg/Social_API/Requirements">Social API Requirements</a>. The various Social Web Working Group specifications implement different combinations of these requirements (see <a href="#requirements"></a>) so for clarity the requirement are defined here.</p>
+          <p lang="zh">按照上述组件，本文档分成五部分，并源自对 <a href="https://www.w3.org/wiki/Socialwg/Social_API/Requirements">社交API需求</a>。  各种社交网络工作组规范实现了这些需求的不同组合 (参见 <a href="#requirements"></a>) 为了清晰起见，这里定义了这些需求.</p>
+
+          <dl>
+              <dt><a href="#reading"><span lang="en">reading</span><span lang="zh">阅读</span></a></dt>
+              <dd>covers specifications which describe the syntax and vocabulary to be used for social content. Useful for applications which expose feeds, as well as those which consume them.</dd>
+              <dt><span lang="en">publishing</span><span lang="zh">发布</span></dt>
+              <dd>covers Social API specifications which tell clients how to instruct servers to <a href="#publishing">create</a>, <a href="#updating">update</a> or <a href="#deleting">delete</a> content.</dd>
+              <dt><a href="#subscribing"><span lang="en">subscribing</span><span lang="zh">订阅</span></a></dt>
+              <dd>covers Federation Protocol specifications which describe how to ask for notifications about content, and subsequently how those notifications should be delivered.</dd>
+              <dt><a href="#delivery"><span lang="en">delivery</span><span lang="zh">分发</span></a></dt>
+              <dd>covers Federation Protocol specifications which describe how to deliver notifications which have not been solicited through subscription.</dd>
+              <dt><a href="#profiles"><span lang="en">profiles</span><span lang="zh">简介</span></a></dt>
+              <dd>covers specifications which describe profiles.</dd>
+          </dl>
+
       </section>
-    </section>
+
+      <section id="swwg-specs">
+          <h3><span lang="en">Specifications</span><span lang="zh">规范</span></h3>
+
+          <p lang="en">These are the specifications produced by the Social Web Working Group. New implementation reports and feedback are always welcome (details for where to submit these are at the top of each document).</p>
+          <p lang="zh">这些是社交网络工作组制定的规范。欢迎新的实施报告和反馈（每个文档的顶部提供了提交这些报告的详细信息）。</p>
+
+          <dl>
+              <dt>[[Activitypub]]</dt>
+              <dd>
+                  <span lang="en">JSON(-LD)-based APIs for client-to-server interactions (ie. publishing) and server-to-server interactions (ie. federation).</span>
+                  <span lang="zh">基于JSON（-LD）的客户端到服务器交互（即发布）和服务器到服务器交互（即联合）的API。</span>
+              </dd>
+
+              <dt>ActivityStreams 2.0 [[activitystreams-core]] and [[activitystreams-vocabulary]]</dt>
+              <dd>
+                  <span lang="en">The syntax and vocabulary for <a href="#reading">representing</a> social activities, actors, objects, and collections in JSON(-LD).</span>
+                  <span lang="zh">以JSON（-LD）<a href="#reading">表示</a>社交活动，角色，对象和集合的语法和词汇表。</span>
+              </dd>
+
+              <dt>Linked Data Notifications ([[LDN]])</dt>
+              <dd>
+                  <span lang="en">A JSON-LD-based protocol for <a href="#delivery">delivery</a>.</span>
+                  <span lang="zh">一个基于JSON-LD的 <a href="#delivery">分发</a>协议。</span>
+              </dd>
+
+              <dt>[[Micropub]]</dt>
+              <dd>
+                  <span lang="en">A form-encoding and JSON-based API for client-to-server interactions (ie. publishing).</span>
+                  <span lang="zh">用于客户端到服务器交互（即发布）的表单编码和基于JSON的API。</span>
+              </dd>
+
+              <dt>[[Webmention]]</dt>
+              <dd>
+                  <span lang="en">A form-encoding-based protocol for <a href="#delivery">delivery</a>.</span>
+                  <span lang="zh">一个基于表单编码（form-encoding）的<a href="#delivery">分发</a>协议。</span>
+              </dd>
+
+              <dt>[[WebSub]]</dt>
+              <dd>
+                  <span lang="en">protocol for <a href="#subscribing">subscription</a> to any resource and <a href="#delivery">delivery</a> of updates about it.</span>
+                  <span lang="zh">用于<a href="#subscribing">订阅</a>任何资源和 <a href="#delivery">分发</a>更新的协议。</span>
+              </dd>
+
+          </dl>
+
+          <p lang="en">Specifications which are not Social Web Working Group recommendations, but which are nonetheless relevent to the charter deliverables, are described in <a href="#related-specs"></a>.</p>
+          <p lang="zh">不是社交网络工作组的建议规范，但与章程的可交付成果相关的规范在<a href="#related-specs"></a>中描述。.</p>
+
+          <section id="requirements">
+              <h4><span lang="en">Requirements</span><span lang="zh">需求</span></h4>
+              <p>This table shows the high level requirements according to the <a href="https://www.w3.org/2013/socialweb/social-wg-charter.html">Social Web Working Group charter</a> and the <a href="https://www.w3.org/wiki/Socialwg/Social_API/Requirements">Social API Requirements</a>, and how the specifications of the Working Group overlap with respect to each.</p>
+              <p>This table lists the requirements met by the core functionality of each specification. Some specifications may additionally touch on or make suggestions about other requirements, which can be useful when deciding how to combine specifications, and is highlighted as appropriate throughout this document.</p>
+              <table class="th90">
+                  <tr>
+                      <td></td>
+                      <td colspan="3">Data syntax</td>
+                      <td colspan="4">Social API</td>
+                      <td colspan="2">Federation Protocol</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <th></th>
+                      <th><a href="#content-representation">Vocabulary</a></th>
+                      <th><a href="#content-representation">Syntax</a></th>
+                      <th><a href="#profiles">Profiles</a></th>
+                      <th><a href="#reading">Read</a></th>
+                      <th><a href="#publishing">Create</a></th>
+                      <th><a href="#updating">Update</a></th>
+                      <th><a href="#deleting">Delete</a></th>
+                      <th><a href="#subscribing">Subscription</a></th>
+                      <th><a href="#delivery">Delivery</a></th>
+                  </tr>
+                  <tr>
+                      <td style="text-align:left;">ActivityPub</td>
+                      <td></td>
+                      <td></td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                  </tr>
+                  <tr>
+                      <td style="text-align:left;">ActivityStreams 2.0</td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+
+                  <tr>
+                      <td style="text-align:left;">Linked Data Notifications</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>X</td>
+                  </tr>
+                  <tr>
+                      <td style="text-align:left;" style="text-align:left;">Micropub</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td></td>
+                      <td></td>
+                  </tr>
+
+                  <tr>
+                      <td style="text-align:left;">Webmention</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>X</td>
+                  </tr>
+                  <tr>
+                      <td style="text-align:left;">WebSub<br></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>X</td>
+                      <td></td>
+                  </tr>
+
+              </table>
+          </section>
+
+          <section id="how-do-the-specs-relate-to-each-other">
+              <h4><span lang="en">How do these specifications relate to each other?</span>
+              <span lang="zh">这些规范的相互关联关系</span>
+              </h4>
+              <p lang="en">As a quick reference, some key relationships between specifications are as follows:</p>
+              <p lang="zh">作为快速参考，规范之间的一些核心关系如下：</p>
+              <ul>
+                  <li>
+                      <span lang="en"><strong>ActivityPub and ActivityStreams 2.0</strong>: ActivityPub uses the AS2 syntax and vocabulary for the payload of all requests.</span>
+                      <span lang="zh"><strong>ActivityPub 和 ActivityStreams 2.0</strong>:ActivityPub使用AS2语法和词汇表来处理所有请求的负载。</span>
+                  </li>
+                  <li>
+                      <span lang="en">
+                          <strong>ActivityPub 和 Linked Data Notifications</strong>: ActivityPub specialises LDN as the mechanism for delivery of notifications by requiring that payloads are AS2. <em>Inbox</em> endpoint discovery is the same. LDN receivers can understand requests from ActivityPub federated servers, but ActivityPub servers can't necessarily understand requests from generic LDN senders.
+                      </span>
+                      <span lang="zh"><strong>ActivityPub and Linked Data Notifications</strong>:通过获取有效负载为AS2，ActivityPub将LDN专门用于传递通知的机制。 <em>收件箱</em> 端点发现是相同的。 LDN接收器可以理解来自ActivityPub联合服务器的请求，但ActivityPub服务器不一定理解来自通用LDN发送器的请求。</span>
+                  </li>
+                  <li>
+                      <span lang="en"><strong>ActivityStreams 2.0 and Linked Data Notifications</strong>: LDN MAY use the AS2 syntax and vocabulary for the payload of notification requests.</span>
+                      <span lang="zh">><strong>ActivityStreams 2.0 和 Linked Data Notifications</strong>: LDN可以使用AS2语法和词汇表来处理通知请求的有效负载。</span>
+                  </li>
+                  <li>
+                      <span lang="en"><strong>Webmention and Linked Data Notifications</strong>: Overlapping functionality that needs to be bridged due to different content types of requests. An LDN request MAY contain the equivalent data as a Webmention request, but not necessarily vice versa.</span>
+                      <span lang="zh"><strong>Webmention 和 Linked Data Notifications</strong>: 由于请求的内容类型不同，重叠的功能需要桥接。 LDN请求可能包含等价数据作为Webmention请求，但反过来就不一定了。</span>
+                  </li>
+                  <li>
+                      <span lang="en"><strong>ActivityPub and Micropub</strong>: Overlapping functionality that needs to be bridged due to different vocabularies and possibly different content types of requests. Micropub specifies client-to-server interactions for content creation; ActivityPub specifies this, <em>plus</em> side-effects and server-to-server interactions.</span>
+                      <span lang="zh"><strong>ActivityPub 和 Micropub</strong>: 由于不同的词汇表和可能不同的内容类型的请求而需要桥接重叠的功能。 Micropub为内容创建指定客户端到服务器的交互; ActivityPub也指定了这一点，<em>加上</em>了服务器到服务器交互。</span>
+                  </li>
+                  <li>
+                      <span lang="en"><strong>Micropub and Webmention</strong>: Are complementary but independent. Content can be created with Micropub, then Webmentions can be sent to any URLs referenced by the content.</span>
+                      <span lang="zh"><strong>Micropub 和 Webmention</strong>: 互补但独立。内容可以使用Micropub创建，然后Webmentions可以发送内容引用到的任何URL。</span>
+                  </li>
+                  <li>
+                      <span lang="en"><strong>Micropub and Linked Data Notifications</strong>: Are complementary but independent. Content can be created with Micropub, then LDN discovery can be commenced on any relevant resources referenced by the content.</span>
+                      <span lang="zh"><strong>Micropub 和 Linked Data Notifications</strong>: 互补但独立。可以使用Micropub创建内容，然后可以在内容引用的任何相关资源上开始LDN发现。</span>
+                  </li>
+                  <li><span lang="en"><strong>Micropub and WebSub</strong>: Are complementary but independent. Content can be created with Micropub, then a WebSub <em>hub</em> can handle delivery to subscribers.</span>
+                      <span lang="zh"><strong>Micropub 和 WebSub</strong>:互补但独立。内容可以使用Micropub创建，然后WebSub<em>Hub</em>可以处理分发给订阅者。</span>
+                  </li>
+                  <li><span lang="en"><strong>ActivityPub and WebSub</strong>: Overlapping functionality using different content types and verification mechanisms.</span>
+                      <span lang="zh"><strong>ActivityPub 和 WebSub</strong>: 使用不同的内容类型和验证机制的重叠功能。</span>
+                  </li>
+              </ul>
+          </section>
+      </section>
   </section>
 
   <section id="reading">
-  <h2>Reading</h2>
+  <h2><span lang="en">Reading</span><span lang="zh">阅读</span></h2>
 
     <p>If you are a content publisher, this section is about how you should publish your content. If you are a content consumer, this is what you should expect to consume.</p>
 
     <section id="content-representation">
-      <h3>Content representation</h3>
+      <h3><span lang="en">Content representation</span><span lang="zh">内容表述</span></h3>
 
       <p><strong>ActivityStreams 2.0</strong> is the recommended syntax ([[activitystreams-core]]) and vocabulary ([[activitystreams-vocabulary]]) for social data. ActivityStreams 2.0 represents content and interactions as <em>Objects</em> and <em>Activities</em>. The ActivityStreams vocabulary defines a finite set of common Object and Activity types and properties, as well as an extension mechanism for applications which want to expand on or specialise these.</p>
 
@@ -484,7 +551,7 @@ table.th90 th, table.th90 td {
 
 
       <section id="content-other">
-        <h4>Other ways of representing content</h4>
+        <h4><span lang="en">Other ways of representing content</span><span lang="zh">其它表述内容的方法</span></h4>
 
         <p>If you don't like ActivityStreams 2.0, there are still some specifications you can use for particular tasks.</p>
 
@@ -498,12 +565,12 @@ table.th90 th, table.th90 td {
 
     </section>
     <section id="objects">
-      <h3>Objects</h3>
+      <h3><span lang="en">Objects</span><span lang="zh">对象</span></h3>
     
       <p>All ActivityStreams 2.0 objects have URLs in the <code>id</code> property, which return the properties of an object. The response may vary depending on the requester's right to access the content.</p>
     </section>
     <section id="collections">
-      <h3>Collections</h3>
+      <h3><span lang="en">Collections</span><span lang="zh">集合</span></h3>
     
       <p>Each ActivityStreams 2.0 collection has a URL in the <code>id</code> property which returns the contents of the stream (according to the requester's right to access). This could be paged - ActivityStreams 2.0 provides <a href="https://www.w3.org/TR/activitystreams-core/#paging">a paging mechanism</a>. It may include additional metadata about the stream (such as title, description).</p>
       
@@ -512,7 +579,7 @@ table.th90 th, table.th90 td {
       <p>Collections may represent changing streams of objects, or fixed sets. One <a href="#profiles">profile</a> may be associated with one or more streams of content. Streams may be generated automatically or manually, and might be segregated by post type, topic, audience, or any arbitrary criteria decided by the curator of the stream. A profile may include links to multiple streams, which a consumer could follow to read or subscribe to.</p>
 
       <section id="streams-special">
-        <h4>Special streams</h4>
+        <h4><span lang="en">Special streams</span><span lang="zh">特殊流</span></h4>
       
         <p><strong>[[Activitypub]]</strong> specifies two streams that MUST be accessible from a profile via the following properties:</p>
 
@@ -538,7 +605,7 @@ table.th90 th, table.th90 td {
       </section>
 
       <section id="inbox-interop">
-        <h4>Inboxes</h4>
+        <h4><span lang="en">Inboxes</span><span lang="zh">收件箱</span></h4>
         <p>An Inbox is an endpoint to which new objects may be <a href="#delivery">delivered</a>. It also serves as a collection whose contents may be read. The Inbox endpoint is used by both ActivityPub and LDN, and can be discovered through the properties:
         <ul>
           <li><code>ldp:inbox</code> (<code>http://www.w3.org/ns/ldp#inbox</code>)</li>
@@ -588,7 +655,7 @@ table.th90 th, table.th90 td {
   </section>
 
   <section id="publishing">
-    <h2>Publishing</h2>
+    <h2><span lang="en">Publishing</span><span lang="zh">发布</span></h2>
 
     <p>Publishing in this context refers to modifying the outgoing feed associated with a particular profile. This incorporates creating new content, as well as updating or deleting existing content. Content generated through a client (such as a web form, mobile app, sensor, smart device) is created when it is sent to a server for processing, where it is typically stored and usually published (either publicly or to a restricted audience), in human- and/or machine-readable forms. Clients and servers may independently support creating, updating and deleting; there are no dependencies between them.</p>
 
@@ -668,7 +735,7 @@ table.th90 th, table.th90 td {
   </section>
 </section>
   <section id="subscribing">
-    <h2>Subscribing</h2>
+    <h2><span lang="en">Subscribing</span><span lang="zh">订阅</span></h2>
 
     <p>An agent (client or server) may <em>ask</em> to be notified of changes to a content object (eg. edits, new replies) or stream of content (eg. objects added or removed from a particular stream). This is <em>subscribing</em>. Specifications which contain subscription mechanisms are ActivityPub and WebSub.</p>
 
@@ -724,7 +791,7 @@ table.th90 th, table.th90 td {
   </section>
  
   <section id="delivery">
-    <h2>Delivery</h2>
+    <h2><span lang="en">Delivery</span><span lang="zh">分发</span></h2>
     
     <p>A user or application may wish to push a notification to another user that the receiver has <em>not explicitly asked</em> for. For example to send a message or some new information; because they have linked to (replied, liked, bookmarked, reposted, etc) their content; because they have linked to (tagged, addressed) the user directly; to make the recipient aware of a change in state of some document or resource on the Web. The Social Web Working Group specifications contain several mechanisms for carrying out delivery; they are listed here from general to specialised.</p>
 
@@ -916,7 +983,7 @@ table.th90 th, table.th90 td {
   </section>
   </section>
   <section id="profiles">
-      <h2>Profiles</h2>
+      <h2><span lang="en">Profiles</span><span lang="zh">简介</span></h2>
 
       <p>The subject of a profile document can be a person, persona, organisation, bot, location, or other. None of the specifications described here prescribe particular relationships between real-world entities and online profiles. That is, one person can have many profiles, and one profile may be controlled by many people. How/if/when multiple profiles are linked together is implementation specific, and not specified anywhere here.</p>
 
@@ -957,7 +1024,7 @@ table.th90 th, table.th90 td {
 
     <section id="related-specs">
       
-      <h2>Related specifcations</h2>
+      <h2><span lang="en">Related specifcations</span><span lang="zh">相关规范</span></h2>
 
       <p>Other specifications worth mentioning in relation to the output of the Social Web Working Group are outlined here.</p>
 
@@ -986,7 +1053,7 @@ table.th90 th, table.th90 td {
     </section>
 
     <section id="change-log" class="appendix information">
-      <h2>Change Log</h2>
+      <h2><span lang="en">Change Log</span><span lang="zh">更新日志</span></h2>
 
       <section id="changes-since-2017-05-04">
       <h3>Changes from 4 May 2017 WD to this version</h3>
@@ -1051,6 +1118,7 @@ table.th90 th, table.th90 td {
         </ul>
       </section>
     </section>
-
+	<script src="https://res.chenyaojun.com/js/translate.js"></script>	
+	<script>showLang('zh');</script>
   </body>
 </html>
